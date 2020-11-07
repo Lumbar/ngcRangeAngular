@@ -1,0 +1,41 @@
+<mat-table
+  class="products-table">
+
+  <ng-container matColumnDef="from">
+    <mat-cell
+      class="range-control">
+      <mat-form-field>
+        <input matInput [(ngModel)]="min" type="number">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="range">
+    <mat-cell
+      class="range-control range">
+      <ng5-slider
+        [(value)]="min"
+        [(highValue)]="max"
+        [options]="{
+          floor: 0,
+          ceil: 100,
+          disabled: false,
+          hideLimitLabels: true,
+          hidePointerLabels: true
+        }"
+        [manualRefresh]="slidersRefresh"
+      ></ng5-slider>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="to">
+    <mat-cell
+      class="range-control">
+      <mat-form-field>
+        <input matInput [(ngModel)]="max"  type="number">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

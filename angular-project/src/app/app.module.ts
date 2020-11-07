@@ -58,7 +58,7 @@ import {
   MatToolbarModule,
   MatTooltipModule,
   MatTreeModule,
-} from '@angular/material';
+} from '@angular/material/index';
 
 @NgModule({
   exports: [

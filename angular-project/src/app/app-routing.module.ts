@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { Exercise1Component } from './exercise1/exercise1.component';
-import { Exercise2Component } from './exercise2/exercise2.component';
+import { Exercise1Component } from './modules/range/exercise1/exercise1.component';
+import { Exercise2Component } from './modules/range/exercise2/exercise2.component';
 
 const routes: Routes = [
   { path: 'exercise1', component: Exercise1Component },

@@ -1,0 +1,44 @@
+<div class="title">
+    <h1>SLIDER</h1>
+</div>
+<div class="container-slider center">
+    <div class="range-control">
+        <mat-form-field>
+            <input matInput [ngModel]="ngmodel.From" (ngModelChange)="ngmodel.From=$event" type="text" [disabled]="disabled">
+        </mat-form-field>
+    </div>
+    <div class="range-control range">
+        <ng5-slider *ngIf="!showTicksValues"
+            [(value)]="ngmodel.From"
+            [(highValue)]="ngmodel.To"
+            [options]="{
+            floor: min,
+            ceil: max,
+            disabled: false,
+            hideLimitLabels: false,
+            hidePointerLabels: hidePointerLabels
+            }"
+            [manualRefresh]="slidersRefresh"
+        ></ng5-slider>
+
+        <ng5-slider *ngIf="showTicksValues"
+            [(value)]="ngmodel.From"
+            [(highValue)]="ngmodel.To"
+            [options]="{
+            showTicksValues: showTicksValues,
+            stepsArray: stepsArray,
+            floor: min,
+            ceil: max,
+            disabled: false,
+            hideLimitLabels: false,
+            hidePointerLabels: hidePointerLabels
+            }"
+            [manualRefresh]="slidersRefresh"
+        ></ng5-slider>
+    </div>
+    <div class="range-control">
+        <mat-form-field>
+            <input matInput [ngModel]="ngmodel.To" (ngModelChange)="ngmodel.To=$event" type="text" [disabled]="disabled">
+        </mat-form-field>
+    </div>
+</div>
